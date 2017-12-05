@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Attendance Sheet</title>
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="font-awesome.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Teacher's List</h1>
+  <h2>Who is in class today!</h2>
+
+
+  <h3>Attendance List</h3>
+  <ul class="alists">
+  <% for(var i=0; i<alists.length; i++) {%>
+    <li class="alist">
+      <span><%= alists[i].date %></span>
+      <span><%= alists[i].name %></span>
+      <span><i class="fa fa-clock-o" aria-hidden="true"></i></span>
+      <span><%= alists[i].late %></span>
+      <span><i class="fa fa-trash" aria-hidden="true"></i></span>
+    </li>
+  <% } %>
+  </ul>
+
+  <h2>Enter Student name here:</h2>
+
+  <form action="/alists" method="POST">
+    <input type="text" name="date" placeholder="date">
+    <input type="text" placeholder="name" name="name">
+    <button type="submit">Submit</button>
+  </form>
+
+  <script src="main.js"></script>
+
+</body>
+</html>
